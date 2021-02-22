@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { NavComponent } from './components/nav/nav.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     TestComponent,
     NavComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     MaterialModule

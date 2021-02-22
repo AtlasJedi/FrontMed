@@ -1,0 +1,61 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide id="owl-slide-1">
+    <div style="height: 300px" class="owl">Slide 1</div>
+  </ng-template>
+
+  <ng-template carouselSlide >
+    <mat-card class="main-card">
+      <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>
+              COKOLWIEK
+          </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          content content content
+      </mat-card-content>
+      <mat-card-actions>
+          
+      </mat-card-actions>
+  </mat-card>
+  </ng-template>
+
+  <ng-template carouselSlide id="owl-slide-3">
+    <div style="height: 80px">Slide 3</div>
+  </ng-template>
+
+  <ng-template carouselSlide id="owl-slide-4">
+    <div style="height: 130px">Slide 4</div>
+  </ng-template>
+
+  <ng-template carouselSlide id="owl-slide-5">
+    <div style="height: 90px">Slide 5</div>
+  </ng-template>
+    
+</owl-carousel-o>
+
+
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
