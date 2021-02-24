@@ -1,2 +1,22 @@
-<div class="header">cokolwiek jehst tu</div>
+
+<mat-grid-list cols="6" rowHeight=1rem>
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 6 : 3" [rowspan]="(isHandset$ | async) ? 5 : 4">
+        LOGO NZOZ ul TAKA IT TAKA
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 6 : 1"[rowspan]="(isHandset$ | async) ? 3 : 4">
+        <button color="primary" mat-raised-button >STREFA SENIORA</button>
+    </mat-grid-tile>
+
+    <span class="spacer"></span>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 3 : 1" [rowspan]="(isHandset$ | async) ? 3 : 4">
+        <button color="primary" mat-raised-button >TEL: 606 554 201</button>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 3 : 1" [rowspan]="(isHandset$ | async) ? 3 : 4">
+        <button color="primary" mat-raised-button >EMAIL: BANANY@I.PL</button>
+    </mat-grid-tile>
+    
+</mat-grid-list>
 
