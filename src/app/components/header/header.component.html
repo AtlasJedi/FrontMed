@@ -1,7 +1,8 @@
 
-<mat-grid-list cols="6" rowHeight=1rem>
-    <mat-grid-tile [colspan]="(isHandset$ | async) ? 6 : 3" [rowspan]="(isHandset$ | async) ? 5 : 4">
-        LOGO NZOZ ul TAKA IT TAKA
+<mat-grid-list cols="6" rowHeight=2rem [ngClass]='(isHandset$ | async) ? "g-mobile" : "g-list"'>
+    <mat-grid-tile [ngClass]='(isHandset$ | async) ? "img-box-mobile" : "img-box"' [colspan]="(isHandset$ | async) ? 6 : 3" [rowspan]="(isHandset$ | async) ? 5 : 4">
+        
+        
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="(isHandset$ | async) ? 6 : 1"[rowspan]="(isHandset$ | async) ? 3 : 4">

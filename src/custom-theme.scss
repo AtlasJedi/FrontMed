@@ -4,30 +4,30 @@
 @import '~@angular/material/theming';
 
 $md-dzikpalette: (
-  50 : #eeedfc,
-    100 : #d4d3f8,
-    200 : #b7b6f4,
-    300 : #9a99ef,
-    400 : #8583eb,
-    500 : #6f6de8,
-    600 : #6765e5,
-    700 : #5c5ae2,
-    800 : #5250de,
-    900 : #403ed8,
-    A100 : #ffffff,
-    A200 : #f4f4ff,
-    A400 : #c2c1ff,
-    A700 : #a8a7ff,
+    50 : #ebf7f7,
+    100 : #cdebea,
+    200 : #acdedc,
+    300 : #8bd1ce,
+    400 : #72c7c4,
+    500 : #59bdb9,
+    600 : #51b7b2,
+    700 : #48aeaa,
+    800 : #3ea6a2,
+    900 : #2e9893,
+    A100 : #defffd,
+    A200 : #abfffa,
+    A400 : #78fff8,
+    A700 : #5efff6,
     contrast: (
         50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #000000,
         400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
         900 : #ffffff,
         A100 : #000000,
         A200 : #000000,
@@ -36,11 +36,14 @@ $md-dzikpalette: (
     )
 );
 
+
+
 $mf-primary: mat-palette($md-dzikpalette);
 $mf-accent: mat-palette($md-dzikpalette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $mf-warn: mat-palette($md-dzikpalette);
+
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -48,13 +51,13 @@ $mf-theme: mat-light-theme((
   color: (
     primary: $mf-primary,
     accent: $mf-accent,
-    warn: $mf-warn,
+    warn: $mf-warn
   )
 ));
 
 
 $dzik-typography: mat-typography-config(
-  $font-family: '"Gruppo", cursive;'
+  $font-family: '"Rubik", sans-serif;'
 );
 
 @include angular-material-theme($mf-theme);
@@ -62,4 +65,4 @@ $dzik-typography: mat-typography-config(
 @include mat-core();
 
 html, body { height: 100%; }
-body { margin: 0; font-family: "Gruppo", sans-serif; }
+body { margin: 0; font-family: "Rubik", sans-serif; }

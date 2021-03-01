@@ -14,8 +14,17 @@ import { News } from 'src/app/interfaces/news';
 export class HomeComponent implements OnInit{
   /** Based on the screen size, switch from standard to one column per row */
 
+
   public newsA: News[] = [];
 
+  private getNews(): void {
+    this.newsService.getNews()
+    .subscribe(
+      (response: News[]) => { this.newsA= response},
+      (error: HttpErrorResponse) => { alert(error.message);
+      })
+      
+  }
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -61,9 +70,10 @@ export class HomeComponent implements OnInit{
     nav: true
   }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+    private newsService: NewsService) {}
 
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+    ngOnInit(): void {
+      this.getNews();
+    }
 }

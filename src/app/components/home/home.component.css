@@ -27,7 +27,7 @@
 }
 
 .owl {
-  background-color: red;
-  background: red;
+  
+  background:url("src/assets/img/logo1.jpg");
   color: red;
 }

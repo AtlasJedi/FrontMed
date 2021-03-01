@@ -13,8 +13,7 @@ import { News } from 'src/app/interfaces/news';
 })
 export class NavComponent{
 
-  private newsA: News[] = [];
-
+  
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -22,7 +21,7 @@ export class NavComponent{
     );
   
     
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver ) {}
 
     
 }
