@@ -1,22 +1,27 @@
 
-<mat-grid-list cols="6" rowHeight=2rem [ngClass]='(isHandset$ | async) ? "g-mobile" : "g-list"'>
-    <mat-grid-tile [ngClass]='(isHandset$ | async) ? "img-box-mobile" : "img-box"' [colspan]="(isHandset$ | async) ? 6 : 3" [rowspan]="(isHandset$ | async) ? 5 : 4">
-        
-        
+<mat-grid-list      cols="6" rowHeight=2rem 
+                    [ngClass]='(isHandset$ | async) ? "g-mobile" : "g-list"'>
+
+    <mat-grid-tile  [ngClass]='(isHandset$ | async) ? "img-box-mobile" : "img-box"' 
+                    [colspan]="(isHandset$ | async) ? 6 : 3" 
+                    [rowspan]="(isHandset$ | async) ? 5 : 4"> 
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="(isHandset$ | async) ? 6 : 1"[rowspan]="(isHandset$ | async) ? 3 : 4">
+    <mat-grid-tile  [colspan]="(isHandset$ | async) ? 6 : 1"
+                    [rowspan]="(isHandset$ | async) ? 2 : 4">
         <button color="primary" mat-raised-button >STREFA SENIORA</button>
     </mat-grid-tile>
 
     <span class="spacer"></span>
 
-    <mat-grid-tile [colspan]="(isHandset$ | async) ? 3 : 1" [rowspan]="(isHandset$ | async) ? 3 : 4">
-        <button color="primary" mat-raised-button >TEL: 606 554 201</button>
+    <mat-grid-tile  [colspan]="(isHandset$ | async) ? 3 : 1" 
+                    [rowspan]="(isHandset$ | async) ? 2 : 4">
+        <button color="primary" mat-raised-button >606 554 201</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="(isHandset$ | async) ? 3 : 1" [rowspan]="(isHandset$ | async) ? 3 : 4">
-        <button color="primary" mat-raised-button >EMAIL: BANANY@I.PL</button>
+    <mat-grid-tile  [colspan]="(isHandset$ | async) ? 3 : 1" 
+                    [rowspan]="(isHandset$ | async) ? 2 : 4">
+        <button color="primary" mat-raised-button >NZOZGARNO@NFZ.ORG</button>
     </mat-grid-tile>
     
 </mat-grid-list>
