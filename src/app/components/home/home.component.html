@@ -1,6 +1,6 @@
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide id="owl-slide-1">
-    <div style="height: 300px" class="owl">Slide 1</div>
+    <div style="height: 65vh" class="owl">Slide 1</div>
   </ng-template>
 
   <ng-template carouselSlide >
@@ -32,9 +32,32 @@
     <div style="height: 90px">Slide 5</div>
   </ng-template>
     
+  <!-- TRY THIS ngFOR thing  -->
+
+  <ng-template *ngFor="let owl of owls" carouselSlide>
+  <div  class="owl-boy" 
+        [ngStyle]="{ 'background-image': 'url(assets/img/back3.jpg)'}">Slide 666 {{owl.url}}</div>
+</ng-template>
+
+<ng-template *ngFor="let owl of owls" carouselSlide>
+  <div  class="owl-boy" 
+        [ngStyle]="{ 'background': 'owl.url'}">Slide 666 {{owl.url}}</div>
+</ng-template>
+
+
+<ng-template carouselSlide>
+  <div style="height: 190px">Slide 666 </div>
+</ng-template>
+  
 </owl-carousel-o>
 
-
+<div *ngFor="let x of owls" >
+  <div style="height: 500px" [style.backgroundImage]="'url(assets/img/back2.jpg)'"></div>
+ <div style="background-image: url('src/assets/img/back1.jpg')">COKOLWIEK
+  <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat modi m
+    ollitia sed. Sunt aliquam laborum eum consequatur, accusantium nemo dolor fuga est? Pariatur est atque consequuntur aliquam, sit distinctio similique.</p>
+  </div>
+</div>
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="2" rowHeight="350px">

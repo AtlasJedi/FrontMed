@@ -22,12 +22,16 @@
 
 /* KARUZELA */
 
-.carouselSlide {
-  max-height: 200px;
-}
 
 .owl {
   
   background:url("src/assets/img/logo1.jpg");
   color: red;
+}
+.owl-boy {
+  color: blue;
+  height: 65vh;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }

@@ -21,17 +21,11 @@
 
 
 
-
-.mat-nav-list-in-toolbar {
-  display: flex;
-}
-
 .mat-button {
   position: relative;
-  font-size: 110%;
+  font-size: 1rem;
   margin: 1rem;
   height: 100%;
-  height: 10%;
   color: black;
 
 }

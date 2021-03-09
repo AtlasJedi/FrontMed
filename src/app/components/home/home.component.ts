@@ -70,8 +70,15 @@ export class HomeComponent implements OnInit{
     nav: true
   }
 
+  owls: any;
+
   constructor(private breakpointObserver: BreakpointObserver,
-    private newsService: NewsService) {}
+    private newsService: NewsService) {
+
+      this.owls = [
+        {url: 'red'},
+        {url: 'assets/img/back2.jpg'}];
+    }
 
     ngOnInit(): void {
       this.getNews();

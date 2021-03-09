@@ -14,22 +14,25 @@
 
 .mat-grid-tile
     place-items: center
-
-
+    &:focus
+        outline: 0
+        border: none
+    &:hover
+        cursor: pointer
 
 .mat-raised-button
     
     margin: 1em
     
     max-height: 3rem
-    min-width: 14rem
+    min-width: 12rem
     font-size: 130%
     place-items: center
     color: white
     height: 80%
     transition: 300ms ease-in-out
     &:hover
-        font-size: 125%
+        font-size: 1.2rem
         background-color: snow
         color: black
         transition: 300ms ease-in-out

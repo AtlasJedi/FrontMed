@@ -4,6 +4,7 @@
 @import '~@angular/material/theming';
 
 $md-dzikpalette: (
+    10 : #ffffff,
     50 : #ebf7f7,
     100 : #cdebea,
     200 : #acdedc,
@@ -39,14 +40,10 @@ $md-dzikpalette: (
 
 
 $mf-primary: mat-palette($md-dzikpalette);
-$mf-accent: mat-palette($md-dzikpalette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
+$mf-accent: mat-palette($md-dzikpalette, 10);
 $mf-warn: mat-palette($md-dzikpalette);
 
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
 $mf-theme: mat-light-theme((
   color: (
     primary: $mf-primary,
