@@ -13,6 +13,13 @@ export class TestComponent implements OnInit {
 
   public newsA: News[] = [];
   
+  readMore: boolean[] = [];
+
+  clickReadMore(i: number): void{
+      this.readMore[i] = !this.readMore[i]
+      console.log("clicked!!!"+ i)
+  }
+
   ngOnInit(): void {
     this.getNews();
   }

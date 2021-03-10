@@ -1,20 +1,33 @@
-<div class="spacer"></div>
 
-<div *ngFor="let n of newsA" class="container"> 
-    <mat-card class="main-card">
-        <mat-card-header>
+
+    <mat-card color="primary" *ngFor="let n of newsA" 
+    [ngClass]="{'rolled' : readMore[n.id]}">
+        <mat-card-header color="primary">
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>
+            <mat-card-title background="primary">
                 {{n.title}}
             </mat-card-title>
+            <button mat-rised-button (click)="clickReadMore(n.id)">
+                {{ readMore[n.id] ? "ZWIŃ" : "CZYTAJ WIĘCEJ"}}
+            </button>
         </mat-card-header>
-        <mat-card-content>
-            {{n.content}}
+        <mat-card-content color="primary">
+            <p>COKOLWIEK</p>
+            <p>COKOLWIEK</p>
+            <p>COKOLWIEK</p>
+            <p>COKOLWIEK</p>
+            <p>COKOLWIEK</p>
+            <p class="parag">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, expedita pariatur minima mollitia tenetur, voluptatum quasi, ullam velit labore asperiores sit eum cum ut adipisci saepe soluta? Est, iure dicta.</p>
+            <p *ngFor="let p of n.content" class="parag">
+
+                {{p}}
+
+            </p>
+            
         </mat-card-content>
         <mat-card-actions>
             
         </mat-card-actions>
     </mat-card>
-</div>
 
-<div class="spacer"></div>
+
