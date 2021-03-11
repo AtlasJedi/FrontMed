@@ -31,7 +31,7 @@ export class NewsComponent implements OnInit {
 
   getDateFormated(a: Date){
   
-    
+    this.news
     
   }
 

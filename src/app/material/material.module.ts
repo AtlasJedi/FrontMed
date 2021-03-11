@@ -14,8 +14,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import {MatExpansionModule, MatAccordion} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 const expo = [
@@ -36,7 +37,10 @@ const expo = [
     MatIconModule,
     MatButtonModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatDatepickerModule
 ];
 @NgModule({
   declarations: [],
