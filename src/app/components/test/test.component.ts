@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NewsService } from 'src/app/services/news/news.service';
 import { News } from 'src/app/interfaces/news';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-test',
@@ -20,6 +21,10 @@ export class TestComponent implements OnInit {
       console.log("clicked!!!"+ i)
   }
 
+  @ViewChild(MatAccordion) accordion: MatAccordion;
+
+  
+
   ngOnInit(): void {
     this.getNews();
   }
@@ -32,7 +37,9 @@ export class TestComponent implements OnInit {
       })
       
   }
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService) {
+    this.accordion = new MatAccordion;
+   }
 
 
 }

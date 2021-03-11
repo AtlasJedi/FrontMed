@@ -1,0 +1,28 @@
+<p>news works!</p>
+
+<mat-accordion class="headers-align">
+    <mat-expansion-panel *ngFor="let n of news; let i = index;" hideToggle
+    [expanded]="step === i" (opened)="setStep(i)">
+        <mat-expansion-panel-header>
+            
+            <mat-panel-title>
+                {{n.title}} 
+            </mat-panel-title>
+
+            <mat-panel-description>
+                <span class="spacer"></span>
+                
+                <span>
+                    {{n.date | date:'dd MMMM'}}
+                </span>
+                
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        {{n.content}}
+
+        <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">KOLEJNA AKTUALNOŚĆ</button>
+          </mat-action-row>
+
+    </mat-expansion-panel>
+</mat-accordion>
