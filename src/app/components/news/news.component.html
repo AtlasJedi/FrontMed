@@ -1,22 +1,23 @@
-<p>news works!</p>
+<p>AKTUALNOŚĆI</p>
 
-<mat-accordion class="headers-align">
+
+<div class="example-action-buttons">
+    <button mat-button (click)="allExpandedSwitch()">{{allExpanded ? "UKRYJ WSZYSTKIE" : "POKAŻ WSZYSTKIE"}}</button>
+    
+  </div>
+
+
+
     <mat-expansion-panel *ngFor="let n of news; let i = index;" hideToggle
-    [expanded]="step === i" (opened)="setStep(i)">
-        <mat-expansion-panel-header>
+    [expanded]="step === i || allExpanded" (opened)="setStep(i)">
+        <mat-expansion-panel-header [collapsedHeight]="'5rem'" [expandedHeight]="'4rem'">
             
             <mat-panel-title>
                 {{n.title}} 
             </mat-panel-title>
 
-            <mat-panel-description>
-                <span class="spacer"></span>
-                
-                <span>
-                    {{n.date | date:'dd MMMM'}}
-                </span>
-                
-            </mat-panel-description>
+            <div>{{n.date | date:'dd MMMM'}}</div>
+            
         </mat-expansion-panel-header>
         {{n.content}}
 
@@ -25,4 +26,3 @@
           </mat-action-row>
 
     </mat-expansion-panel>
-</mat-accordion>

@@ -17,8 +17,9 @@ export class NewsComponent implements OnInit {
 
   @ViewChild(MatAccordion) accordion: MatAccordion;
 
+  
   step: number = -1;
-
+  
   setStep(index: number) {
     this.step = index;
   }
@@ -28,7 +29,13 @@ export class NewsComponent implements OnInit {
   prevStep() {
     this.step--;
   }
+  
+  allExpanded = false;
 
+  allExpandedSwitch(){
+    this.allExpanded = !this.allExpanded;
+  }
+  
   getDateFormated(a: Date){
   
     this.news
@@ -51,6 +58,7 @@ export class NewsComponent implements OnInit {
    ngOnInit(): void {
     this.getNews();
 
+   
   }
 
 }
