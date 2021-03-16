@@ -37,12 +37,9 @@ $md-dzikpalette: (
     )
 );
 
-
-
 $mf-primary: mat-palette($md-dzikpalette);
 $mf-accent: mat-palette($md-dzikpalette, 10);
 $mf-warn: mat-palette($md-dzikpalette);
-
 
 $mf-theme: mat-light-theme((
   color: (
@@ -54,12 +51,14 @@ $mf-theme: mat-light-theme((
 
 
 $dzik-typography: mat-typography-config(
-  $font-family: '"Rubik", sans-serif;'
+  $font-family: 'Raleway',
+  $title: mat-typography-level(1.2rem, 1rem, bold),
+  $body-1: mat-typography-level(1.05rem, 1.7rem)
 );
 
 @include angular-material-theme($mf-theme);
+@include angular-material-typography($dzik-typography);
 @include mat-core($dzik-typography);
-@include mat-core();
 
 html, body { height: 100%; }
-body { margin: 0; font-family: "Rubik", sans-serif; }
+body { margin: 0; font-family: "Raleway", sans-serif; }

@@ -15,8 +15,7 @@ export class NewsComponent implements OnInit {
 
   public news: News[] = [];
 
-  @ViewChild(MatAccordion) accordion: MatAccordion;
-
+  
   
   step: number = -1;
   
@@ -30,9 +29,11 @@ export class NewsComponent implements OnInit {
     this.step--;
   }
   
+  
   allExpanded = false;
 
   allExpandedSwitch(){
+    this.step = -1;
     this.allExpanded = !this.allExpanded;
   }
   
@@ -52,7 +53,6 @@ export class NewsComponent implements OnInit {
       
   }
   constructor(private newsService: NewsService) {
-    this.accordion = new MatAccordion;
    }
 
    ngOnInit(): void {
