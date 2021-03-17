@@ -10,7 +10,7 @@
     <mat-expansion-panel *ngFor="let n of news; let i = index;"
     hideToggle
     [expanded]="step === i || allExpanded" (opened)="setStep(i)">
-        <mat-expansion-panel-header [collapsedHeight]="'6rem'" [expandedHeight]="'8rem'">
+        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto+1rem'">
             
             <mat-panel-title class="title-container">
                 <div class="title-icon">
@@ -26,10 +26,10 @@
             
         </mat-expansion-panel-header>
         
-        <div class="mat-body-1" *ngFor="let c of n.content">
-
-            {{c}}
-
+        <div *ngFor="let c of n.content">
+            <div class="mat-body-1">
+                {{c}}
+            </div>
         </div>
         
 
