@@ -9,7 +9,9 @@ import { NewsComponent } from './components/news/news.component';
 
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
-import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { ContactSheetComponent } from './components/bottom-sheets/contact-sheet/contact-sheet.component';
+import { HandiSheetComponent } from './components/bottom-sheets/handi-sheet/handi-sheet.component';
+import { EmailSheetComponent } from './components/bottom-sheets/email-sheet/email-sheet.component';
 registerLocaleData(localePl);
 
 @NgModule({
@@ -21,12 +23,14 @@ registerLocaleData(localePl);
     HeaderComponent,
     HomeComponent,
     NewsComponent,
-    BottomSheetComponent
+    ContactSheetComponent,
+    HandiSheetComponent,
+    EmailSheetComponent
   ],
   imports: [
     MaterialModule
   ],
-  entryComponents: [BottomSheetComponent],
+  entryComponents: [HandiSheetComponent, ContactSheetComponent, EmailSheetComponent],
   providers: [{provide: LOCALE_ID, useValue: 'pl'}],
   bootstrap: [AppComponent]
 })

@@ -4,31 +4,30 @@
 @import '~@angular/material/theming';
 
 $md-dzikpalette: (
-    10 : #ffffff,
-    50 : #ebf7f7,
-    100 : #cdebea,
-    200 : #acdedc,
-    300 : #8bd1ce,
-    400 : #72c7c4,
-    500 : #59bdb9,
-    600 : #51b7b2,
-    700 : #48aeaa,
-    800 : #3ea6a2,
-    900 : #2e9893,
-    A100 : #defffd,
-    A200 : #abfffa,
-    A400 : #78fff8,
-    A700 : #5efff6,
+    50 : #e1f2f3,
+    100 : #b3dfe1,
+    200 : #80c9cd,
+    300 : #4db3b8,
+    400 : #27a3a9,
+    500 : #01939a,
+    600 : #018b92,
+    700 : #018088,
+    800 : #01767e,
+    900 : #00646c,
+    A100 : #9cf5ff,
+    A200 : #69f0ff,
+    A400 : #36ecff,
+    A700 : #1ce9ff,
     contrast: (
         50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
         900 : #ffffff,
         A100 : #000000,
         A200 : #000000,
@@ -36,6 +35,7 @@ $md-dzikpalette: (
         A700 : #000000,
     )
 );
+
 
 $mf-primary: mat-palette($md-dzikpalette);
 $mf-accent: mat-palette($md-dzikpalette, 10);

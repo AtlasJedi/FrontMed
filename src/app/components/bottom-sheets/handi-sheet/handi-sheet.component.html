@@ -1,0 +1,18 @@
+<mat-grid-list cols="3" rowHeight=3rem>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button color="primary" mat-raised-button (click)="txtBigger()">
+            A+
+        </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-raised-button (click)="txtRestore()">
+            100%
+        </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-raised-button (click)="txtSmaller()">
+            A-
+        </button>
+    </mat-grid-tile>
+    
+</mat-grid-list>

@@ -1,0 +1,41 @@
+
+
+  <mat-grid-list cols="2" rowHeight="5.5rem">
+
+    <mat-grid-tile [colspan]="1">
+        <h1 style="border-bottom: 2px solid teal;">EMAIL</h1>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">
+        <button mat-raised-button color="primary">
+            <a href = "mailto: piotr@putiatycki.pl">tylkodobretabsy@łykaj.pl</a>
+        </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>IMIĘ</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
+        <mat-form-field appearance="outline" color="primary">
+            <mat-label>Podaj swój adres email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">Nieprawidłowy email</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="3">
+        <mat-form-field appearance="outline">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput style="height: 12rem;"></textarea>
+          </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+        <button mat-raised-button color="primary" style="font-size: 1.5rem;">
+            WYŚLIJ
+        </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  

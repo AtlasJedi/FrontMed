@@ -18,7 +18,9 @@ import {MatExpansionModule, MatAccordion} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule } from '@angular/material/input';
+import {MatSelectModule } from '@angular/material/select';
 
 const expo = [
   LayoutModule,
@@ -42,7 +44,12 @@ const expo = [
     MatExpansionModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
 ];
 @NgModule({
   declarations: [],

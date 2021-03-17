@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-bottom-sheet',
-  templateUrl: './bottom-sheet.component.html',
-  styleUrls: ['./bottom-sheet.component.sass']
+  selector: 'app-handi-sheet',
+  templateUrl: './handi-sheet.component.html',
+  styleUrls: ['./handi-sheet.component.sass']
 })
-export class BottomSheetComponent implements OnInit {
+export class HandiSheetComponent implements OnInit {
 
   zoomStatus: number = 1;
 
@@ -13,7 +13,6 @@ export class BottomSheetComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
   txtBigger(){
     this.zoomStatus += 0.1;
