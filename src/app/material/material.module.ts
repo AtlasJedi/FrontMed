@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatExpansionModule, MatAccordion} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 
 const expo = [
@@ -40,7 +41,8 @@ const expo = [
     HttpClientModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatBottomSheetModule
 ];
 @NgModule({
   declarations: [],

@@ -9,6 +9,7 @@ import { NewsComponent } from './components/news/news.component';
 
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 registerLocaleData(localePl);
 
 @NgModule({
@@ -19,11 +20,13 @@ registerLocaleData(localePl);
     NavComponent,
     HeaderComponent,
     HomeComponent,
-    NewsComponent
+    NewsComponent,
+    BottomSheetComponent
   ],
   imports: [
     MaterialModule
   ],
+  entryComponents: [BottomSheetComponent],
   providers: [{provide: LOCALE_ID, useValue: 'pl'}],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 
 @Component({
@@ -11,6 +13,9 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavComponent{
 
+  openBottomSheet() {
+    this.bottomSheet.open(BottomSheetComponent)
+  }
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -19,7 +24,7 @@ export class NavComponent{
     );
   
     
-  constructor(private breakpointObserver: BreakpointObserver ) {}
-
-    
+  constructor(private breakpointObserver: BreakpointObserver, 
+    private bottomSheet: MatBottomSheet ) {}
+ 
 }
