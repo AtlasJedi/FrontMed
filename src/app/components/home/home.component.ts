@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NewsService } from 'src/app/services/news/news.service';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { News } from 'src/app/interfaces/news';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -17,42 +16,26 @@ export class HomeComponent implements OnInit{
 
   public newsA: News[] = [];
 
-  private getNews(): void {
+  public getNews(): void {
     this.newsService.getNews()
     .subscribe(
       (response: News[]) => { this.newsA= response},
+      
       (error: HttpErrorResponse) => { alert(error.message);
       })
-      
-  }
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
-
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+    }
 
   customOptions: OwlOptions = {
     loop: true,
+    autoplay: true,
+    autoplaySpeed: 1200,
+    autoplayHoverPause: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
     dots: false,
     navSpeed: 600,
-    navText: ['&#8249', '&#8250;'],
+    navText: ['next','prev'],
     responsive: {
       0: {
         items: 1 
@@ -67,17 +50,15 @@ export class HomeComponent implements OnInit{
         items: 1
       }
     },
-    nav: true
+    nav: false
   }
+  
 
-  owls: any;
 
-  constructor(private breakpointObserver: BreakpointObserver,
-    private newsService: NewsService) {
 
-      this.owls = [
-        {url: 'red'},
-        {url: 'assets/img/back2.jpg'}];
+  constructor(private newsService: NewsService) {
+
+      
     }
 
     ngOnInit(): void {

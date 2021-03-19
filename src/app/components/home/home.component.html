@@ -1,84 +1,45 @@
 <owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide id="owl-slide-1">
-    <div style="height: 65vh" class="owl">Slide 1</div>
-  </ng-template>
-
-  <ng-template carouselSlide >
-    <mat-card class="main-card">
-      <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>
-              COKOLWIEK
-          </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse beatae molestias voluptas sed necessitatibus alias libero itaque earum, distinctio veniam laborum provident voluptatem illo veritatis dignissimos hic, cumque at autem.
-      </mat-card-content>
-      <mat-card-actions>
-          
-      </mat-card-actions>
-  </mat-card>
-  </ng-template>
-
-  <ng-template carouselSlide id="owl-slide-3">
-    <div style="height: 80px">Slide 3</div>
-  </ng-template>
-
-  <ng-template carouselSlide id="owl-slide-4">
-    <div style="height: 130px">Slide 4</div>
-  </ng-template>
-
-  <ng-template carouselSlide id="owl-slide-5">
-    <div style="height: 90px">Slide 5</div>
-  </ng-template>
+  
     
-  <!-- TRY THIS ngFOR thing  -->
-
-  <ng-template *ngFor="let owl of owls" carouselSlide>
+  
+<ng-template carouselSlide>
   <div  class="owl-boy" 
-        [ngStyle]="{ 'background-image': 'url(assets/img/back3.jpg)'}">Slide 666 {{owl.url}}</div>
-</ng-template>
+        [ngStyle]="{ 'background-image': 'url(assets/img/f1.jpg)'}">
+      <div class="title">
+        <h1>"Wjezdza biała mewa, <br> więcej nam nie trzeba"</h1>
+      </div>
+        
+      <button class="more-button" mat-raised-button> CZYTAJ WIĘCEJ</button>
 
-<ng-template *ngFor="let owl of owls" carouselSlide>
-  <div  class="owl-boy" 
-        [ngStyle]="{ 'background': 'owl.url'}">Slide 666 {{owl.url}}</div>
+  </div>
 </ng-template>
-
 
 <ng-template carouselSlide>
-  <div style="height: 190px">Slide 666 </div>
-</ng-template>
-  
-</owl-carousel-o>
+  <div  class="owl-boy" 
+        [ngStyle]="{ 'background-image': 'url(assets/img/f6.jpg)'}">
 
-<div *ngFor="let x of owls" >
-  <div style="height: 500px" [style.backgroundImage]="'url(assets/img/back2.jpg)'"></div>
- <div style="background-image: url('src/assets/img/back1.jpg')">COKOLWIEK
-  <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat modi m
-    ollitia sed. Sunt aliquam laborum eum consequatur, accusantium nemo dolor fuga est? Pariatur est atque consequuntur aliquam, sit distinctio similique.</p>
+        <div class="title">
+          <h1>{{newsA[7].title}} </h1>
+        </div>
+
+    
+          <div class="mat-body-1">
+            {{newsA[7].content}}
+          </div>
+          
+
+          
+        <button class="more-button" mat-raised-button> AKTUALNOŚCI</button>
+  
+        
   </div>
-</div>
-<div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+</ng-template>
+
+<ng-template carouselSlide>
+  <div  class="owl-boy" 
+        [ngStyle]="{ 'background-image': 'url(assets/img/f2.jpg)'}">
+        
+  </div>
+</ng-template>
+ </owl-carousel-o>
+

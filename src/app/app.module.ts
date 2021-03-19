@@ -12,6 +12,7 @@ import localePl from '@angular/common/locales/pl';
 import { ContactSheetComponent } from './components/bottom-sheets/contact-sheet/contact-sheet.component';
 import { HandiSheetComponent } from './components/bottom-sheets/handi-sheet/handi-sheet.component';
 import { EmailSheetComponent } from './components/bottom-sheets/email-sheet/email-sheet.component';
+import { FooterComponent } from './components/footer/footer.component';
 registerLocaleData(localePl);
 
 @NgModule({
@@ -25,7 +26,8 @@ registerLocaleData(localePl);
     NewsComponent,
     ContactSheetComponent,
     HandiSheetComponent,
-    EmailSheetComponent
+    EmailSheetComponent,
+    FooterComponent
   ],
   imports: [
     MaterialModule

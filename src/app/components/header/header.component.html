@@ -1,25 +1,25 @@
 
-<mat-grid-list      cols="6" rowHeight=2rem 
+<mat-grid-list      cols="6" rowHeight=1vh 
                     [ngClass]='(isHandset$ | async) ? "g-mobile" : "g-list"'>
 
     <mat-grid-tile  [routerLinkActive]="['is-active']" 
                     routerLink="/home" 
                     [ngClass]='(isHandset$ | async) ? "img-box-mobile" : "img-box"' 
                     [colspan]="(isHandset$ | async) ? 6 : 4" 
-                    [rowspan]="(isHandset$ | async) ? 5 : 4"> 
+                    [rowspan]="(isHandset$ | async) ? 20 : 13"> 
     </mat-grid-tile>
 
 
 
     <mat-grid-tile  [colspan]="(isHandset$ | async) ? 3 : 1" 
-                    [rowspan]="(isHandset$ | async) ? 2 : 4">
+                    [rowspan]="(isHandset$ | async) ? 15 : 13">
         <button color="primary" mat-raised-button (click)="openContactSheet()">
             <mat-icon aria-hidden="false" aria-label="call">call</mat-icon>
             ZADZWOŃ</button>
     </mat-grid-tile>
 
     <mat-grid-tile  [colspan]="(isHandset$ | async) ? 3 : 1" 
-                    [rowspan]="(isHandset$ | async) ? 2 : 4">
+                    [rowspan]="(isHandset$ | async) ? 15 : 13">
         <button color="primary" mat-raised-button (click)="openEmailSheet()">
             <mat-icon aria-hidden="false" aria-label="email">email</mat-icon>
             EMAIL</button>

@@ -1,0 +1,35 @@
+<div class="container">
+<mat-grid-list cols="4" rowHeight="3rem"> 
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1" [rowspan]="1">
+        <h1>COKOLWIEK</h1>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
+        <h1>MIAŁOBY</h1>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
+        
+        <h1>SIĘ TUTAJ</h1>
+        
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1" [rowspan]="1">
+        <h1>ZNALEŹĆ</h1>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="(isHandset$ | async) ? 4 : 2" [rowspan]="1">
+        <h2>Wszystkie prawa są odwrotne niz lewa &#169;</h2>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="copy" [colspan]="2" [rowspan]="1">
+
+        <mat-icon>facebook</mat-icon>
+        <mat-icon>build</mat-icon>
+        <mat-icon>bluetooth</mat-icon>
+        <mat-icon>flash_on</mat-icon>
+        <mat-icon>train</mat-icon>
+    </mat-grid-tile>
+
+</mat-grid-list>
+</div>

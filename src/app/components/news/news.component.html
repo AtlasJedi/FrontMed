@@ -1,6 +1,6 @@
 
 
-
+<div style="background-color: snow;">
     <mat-card> 
         <button mat-raised-button color="primary" class="expand-all-button" (click)="allExpandedSwitch()">{{allExpanded ? "UKRYJ WSZYSTKIE" : "POKAŻ WSZYSTKIE"}}</button>
     </mat-card>
@@ -10,7 +10,7 @@
     <mat-expansion-panel *ngFor="let n of news; let i = index;"
     hideToggle
     [expanded]="step === i || allExpanded" (opened)="setStep(i)">
-        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto+1rem'">
+        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
             
             <mat-panel-title class="title-container">
                 <div class="title-icon">
@@ -38,3 +38,4 @@
           </mat-action-row>
 
     </mat-expansion-panel>
+</div>

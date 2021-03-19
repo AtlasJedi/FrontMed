@@ -1,37 +1,52 @@
-.grid-container {
-  margin: 20px;
-}
-
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
-}
 
 /* KARUZELA */
 
 
-.owl {
-  
-  background:url("src/assets/img/logo1.jpg");
-  color: red;
-}
+
 .owl-boy {
-  color: blue;
-  height: 65vh;
+  min-height: 80vh;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
+.title {
+  padding: 12vh;
+  color: white;
+  position: relative;
+  text-shadow: 2px 2px 4px black;
+
+}
+
+.more-button {
+  font-size: 1.8rem;
+  position: absolute;
+  right: 7rem;
+  bottom: 3rem;
+  transition: 200ms ease-in-out;
+}
+
+.more-button:hover {
+  background: teal;
+  color: white;
+  transition: 200ms ease-in-out;
+}
+
+
+
+.mat-body-1 {
+  text-overflow: hidden;
+  padding: 5vh;
+  position: relative;
+  color: snow;
+  height: 7.4rem;
+  font-size: 1.5rem;
+  overflow: hidden;
+  line-height: 1.5;
+  text-indent: 3rem;
+  text-shadow: 2px 1px black;
+}
+

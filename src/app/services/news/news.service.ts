@@ -16,4 +16,9 @@ export class NewsService {
     console.log(this.newsUrl);
     return this.http.get<News[]>(this.newsUrl+'/news/all');
   }
+
+  public getNewsLatestOne(): Observable<News> {
+    console.log(this.newsUrl);
+    return this.http.get<News>(this.newsUrl+'/news/latest');
+  }
 }

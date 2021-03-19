@@ -19,7 +19,7 @@
 
     <app-header></app-header>
 
-    <mat-toolbar style="display: flex" color="accent">
+    <mat-toolbar style="display: flex">
       <button
         class="burger"
         type="button"
@@ -30,8 +30,8 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       
-
       <span class="spacer"></span>
+      
       <mat-nav-list >
         <a mat-button [matMenuTriggerFor]="belowMenu" 
                       [ngClass]="{hidden: (isHandset$ | async) === true}"
@@ -54,5 +54,12 @@
     </mat-toolbar>
 
     <router-outlet></router-outlet>
+
+    <div class="eee"></div>
+    
+    <app-footer ></app-footer>
   </mat-sidenav-content>
+  
 </mat-sidenav-container>
+
+
