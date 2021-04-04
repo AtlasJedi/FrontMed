@@ -24,7 +24,7 @@
 .more-button {
   font-size: 1.8rem;
   position: absolute;
-  right: 7rem;
+  right: 5rem;
   bottom: 3rem;
   transition: 200ms ease-in-out;
 }
@@ -42,7 +42,7 @@
   padding: 5vh;
   position: relative;
   color: snow;
-  height: 7.4rem;
+  height: 7rem;
   font-size: 1.5rem;
   overflow: hidden;
   line-height: 1.5;
