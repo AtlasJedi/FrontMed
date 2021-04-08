@@ -50,7 +50,7 @@ export class NewsComponent implements OnInit {
       
       (error: HttpErrorResponse) => { 
         
-        alert('SERWIS NIEAKTYWNY.');
+        alert('SERWIS NIEAKTYWNY TEST.');
       })
       
   }
