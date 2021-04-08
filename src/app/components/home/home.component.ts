@@ -13,7 +13,18 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit{
   /** Based on the screen size, switch from standard to one column per row */
 
-
+  public defaultNews: News = {
+    id: 1,
+    title: 'Widzisz to poniewaz serwis jest nieaktywny',
+    content: [''],
+    summary: '',
+    category: '',
+    imgURL: 'url(assets/img/f1.jpg)',
+    readMoreURL: null,
+    position: 1,
+    isActive: true,
+    date: new Date("")
+}
   public newsA: News[] = [];
 
   public getNews(): void {
@@ -21,7 +32,9 @@ export class HomeComponent implements OnInit{
     .subscribe(
       (response: News[]) => { this.newsA= response},
       
-      (error: HttpErrorResponse) => { alert(error.message);
+      (error: News[]) => { this.newsA = [
+        this.defaultNews
+      ]
       })
     }
 

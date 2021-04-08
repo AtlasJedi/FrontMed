@@ -48,7 +48,9 @@ export class NewsComponent implements OnInit {
     .subscribe(
       (response: News[]) => { this.news= response},
       
-      (error: HttpErrorResponse) => { alert(error.message);
+      (error: HttpErrorResponse) => { 
+        
+        alert('SERWIS NIEAKTYWNY.');
       })
       
   }

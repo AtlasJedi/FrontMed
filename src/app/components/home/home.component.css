@@ -4,7 +4,7 @@
 
 
 .owl-boy {
-  min-height: 80vh;
+  min-height: 45rem;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   -webkit-background-size: cover;
@@ -39,7 +39,7 @@
 
 .mat-body-1 {
   text-overflow: hidden;
-  padding: 5vh;
+  padding: 2rem;
   position: relative;
   color: snow;
   height: 7rem;
