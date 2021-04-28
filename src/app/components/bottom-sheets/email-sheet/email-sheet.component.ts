@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -15,11 +15,15 @@ export class EmailSheetComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   message = new FormControl('', [Validators.maxLength(1000)])
 
+  @Output()
+  alertMessage:EventEmitter<string> = new EventEmitter<string>();
+  
   
   submit(): void {
     console.log("message validation: " + this.message.valid)
     console.log("submit done")
     console.log(this.email.valid);
+    this.alertMessage.emit("Dziękujemy " + this.email.value + " za wysłanie wiadomości.")
     this._bottomSheetRef.dismiss();
   }
   

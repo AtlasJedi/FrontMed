@@ -21,6 +21,7 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule } from '@angular/material/input';
 import {MatSelectModule } from '@angular/material/select';
+import {SimpleNotificationsModule } from 'angular2-notifications';
 
 const expo = [
   LayoutModule,
@@ -30,10 +31,11 @@ const expo = [
     MatIconModule,
     MatListModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
     CarouselModule,
-    BrowserModule,
+
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
@@ -49,7 +51,8 @@ const expo = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    SimpleNotificationsModule.forRoot()
 ];
 @NgModule({
   declarations: [],

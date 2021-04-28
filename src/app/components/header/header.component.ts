@@ -5,10 +5,12 @@ import { map, shareReplay } from 'rxjs/operators';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ContactSheetComponent } from '../bottom-sheets/contact-sheet/contact-sheet.component';
 import { EmailSheetComponent } from '../bottom-sheets/email-sheet/email-sheet.component';
+import {NotificationsService} from 'angular2-notifications'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
+  template: '<simple-notifications></simple-notifications>',
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
@@ -28,10 +30,20 @@ export class HeaderComponent implements OnInit {
     this.bottomSheet.open(EmailSheetComponent)
   }
 
+  go(message: any) {
+    this.notificationService.success("dziala!", message, {
+      timeOut: 2000,
+      showProgressBar: false,
+      animate: 'fade'
+    })
+  };
+
   constructor(private breakpointObserver: BreakpointObserver,
-    private bottomSheet: MatBottomSheet) { }
+    private bottomSheet: MatBottomSheet,
+    private notificationService: NotificationsService) { }
 
   ngOnInit(): void {
+    
   }
 
 
