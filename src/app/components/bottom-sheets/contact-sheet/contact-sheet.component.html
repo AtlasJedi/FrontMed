@@ -3,7 +3,7 @@
         <div class="contact-name">Rejestracja</div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="call()">
             <a href="tel:+48-669-288-899">669 453 332</a>
         </button>
     </mat-grid-tile>
@@ -12,7 +12,7 @@
         <div class="contact-name">Szczepienia COVID</div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="call()">
             <a href="tel:+48-669-288-899">91 48 5890</a>
         </button>
     </mat-grid-tile>
@@ -22,7 +22,7 @@
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
         <button mat-raised-button color="primary">
-            <a href="tel:+48-669-288-899">501 500 500</a>
+            <a href="tel:+48-669-288-899" (click)="call()">501 500 500</a>
         </button>
     </mat-grid-tile>
 </mat-grid-list>
