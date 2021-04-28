@@ -1,9 +1,14 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import { MessageHero } from 'src/app/interfaces/userMessage';
+import { MessagesService } from 'src/app/services/messages/messages.service';
+import {NotificationsService} from 'angular2-notifications'
+import { NotifiService } from 'src/app/services/notifications/notifi.service';
+
 
 @Component({
   selector: 'app-email-sheet',
@@ -12,19 +17,33 @@ import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet'
 })
 export class EmailSheetComponent implements OnInit {
   
-  email = new FormControl('', [Validators.required, Validators.email]);
-  message = new FormControl('', [Validators.maxLength(1000)])
-
-  @Output()
-  alertMessage:EventEmitter<string> = new EventEmitter<string>();
+  email = new FormControl('', [Validators.required, Validators.email])
+  text = new FormControl('', [Validators.maxLength(1000)])
+  name = new FormControl('', [Validators.minLength(2), Validators.maxLength(50)])
   
+  messageHero: MessageHero | undefined;
   
   submit(): void {
-    console.log("message validation: " + this.message.valid)
-    console.log("submit done")
-    console.log(this.email.valid);
-    this.alertMessage.emit("Dziękujemy " + this.email.value + " za wysłanie wiadomości.")
-    this._bottomSheetRef.dismiss();
+    console.log("message validation: " + this.text.valid)
+    console.log("name validation: " + this.name.valid)
+    console.log("email validation: " +this.email.valid);
+
+    if (this.email.valid && this.name.valid && this.text.valid){
+      this.messageHero = {
+        name: this.name.value,
+        text: this.text.value,
+        email: this.email.value,
+        status: 'created'
+      }
+      this.messageService.newMessage(this.messageHero).subscribe(
+        data => this.notify.sendAlert(data.name),
+        error => this.notify.sendAlert(error)
+      );
+      
+      this._bottomSheetRef.dismiss();
+      this.notificationService.success(this.notify.currentAlert.subscribe());
+    }
+
   }
   
   getErrorMessage() {
@@ -42,7 +61,10 @@ export class EmailSheetComponent implements OnInit {
   );
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private _bottomSheetRef: MatBottomSheetRef<EmailSheetComponent>) { }
+              private _bottomSheetRef: MatBottomSheetRef<EmailSheetComponent>,
+              private messageService: MessagesService,
+              private notificationService: NotificationsService,
+              private notify: NotifiService) { }
 
   ngOnInit(): void {
   }
