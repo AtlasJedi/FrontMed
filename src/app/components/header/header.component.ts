@@ -6,9 +6,12 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ContactSheetComponent } from '../bottom-sheets/contact-sheet/contact-sheet.component';
 import { EmailSheetComponent } from '../bottom-sheets/email-sheet/email-sheet.component';
 
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
+  template: '<simple-notifications></simple-notifications>',
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
@@ -29,9 +32,11 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(private breakpointObserver: BreakpointObserver,
-    private bottomSheet: MatBottomSheet) { }
+              private bottomSheet: MatBottomSheet) {
+               }
 
   ngOnInit(): void {
+    
   }
 
 

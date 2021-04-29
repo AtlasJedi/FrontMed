@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-contact-sheet',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactSheetComponent implements OnInit {
 
-  constructor() { }
+  call(){
+    this._bottomSheetRef.dismiss();
+  }
+  constructor(private _bottomSheetRef: MatBottomSheetRef<ContactSheetComponent>) { }
 
   ngOnInit(): void {
   }

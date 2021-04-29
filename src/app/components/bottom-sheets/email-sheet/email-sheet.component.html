@@ -12,27 +12,29 @@
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
-        <mat-form-field color="primary" appearance="outline">
+        <mat-form-field #namePost color="primary" appearance="outline">
             <mat-label>IMIĘ</mat-label>
-            <input matInput>
+            <input matInput placeholder="name" [formControl]="name">
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
         <mat-form-field appearance="outline" color="primary">
             <mat-label>Podaj swój adres email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <input matInput placeholder="email" [formControl]="email" required>
             <mat-error *ngIf="email.invalid">Nieprawidłowy email</mat-error>
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="2" [rowspan]="3">
         <mat-form-field appearance="outline">
-            <mat-label>Miejsce na Twoje wypociny...</mat-label>
-            <textarea matInput style="height: 12rem;"></textarea>
+            <mat-label>Twoja wiadomość. Max 1000 znaków.</mat-label>
+            <textarea matInput placeholder="text" [formControl]="text" style="height: 12rem;"></textarea>
           </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="2">
-        <button mat-raised-button color="primary" style="font-size: 1.5rem;">
+        <button mat-raised-button color="primary" 
+                style="font-size: 1.5rem;"
+                (click)="submit()">
             WYŚLIJ
         </button>
     </mat-grid-tile>
