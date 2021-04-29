@@ -37,7 +37,7 @@ export class EmailSheetComponent implements OnInit {
       }
       this.messageService.newMessage(this.messageHero).subscribe(
         data => this.notificationService.success("Dziękujemy "+data.name+" za przesłanie wiadomości."),
-        error => this.notificationService.warn("yo"+error)
+        error => this.notificationService.error("Przykro nam, serwis nieaktywny." )
       );
       
       this._bottomSheetRef.dismiss();
