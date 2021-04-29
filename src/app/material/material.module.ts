@@ -22,6 +22,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule } from '@angular/material/input';
 import {MatSelectModule } from '@angular/material/select';
 import {SimpleNotificationsModule } from 'angular2-notifications';
+import {MatRadioModule} from '@angular/material/radio';
 
 const expo = [
   LayoutModule,
@@ -35,7 +36,7 @@ const expo = [
     BrowserAnimationsModule,
     CommonModule,
     CarouselModule,
-
+    MatRadioModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,

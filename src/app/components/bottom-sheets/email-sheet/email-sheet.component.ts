@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay, timeout } from 'rxjs/operators';
-import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import { MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { MessageHero } from 'src/app/interfaces/userMessage';
 import { MessagesService } from 'src/app/services/messages/messages.service';
 import {NotificationsService} from 'angular2-notifications';
