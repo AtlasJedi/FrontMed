@@ -13,7 +13,7 @@ export class NewsService {
   
   public getNews(): Observable<News[]> {
     console.log(this.newsUrl);
-    return this.http.get<News[]>(this.newsUrl+'/news/all');
+    return this.http.get<News[]>(this.newsUrl+'/news');
   }
   
   public getNewsLatestOne(): Observable<News> {

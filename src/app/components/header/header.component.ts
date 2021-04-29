@@ -7,6 +7,7 @@ import { ContactSheetComponent } from '../bottom-sheets/contact-sheet/contact-sh
 import { EmailSheetComponent } from '../bottom-sheets/email-sheet/email-sheet.component';
 
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -30,11 +31,9 @@ export class HeaderComponent implements OnInit {
     this.bottomSheet.open(EmailSheetComponent)
   }
 
-  
-  
-
   constructor(private breakpointObserver: BreakpointObserver,
-    private bottomSheet: MatBottomSheet) { }
+              private bottomSheet: MatBottomSheet) {
+               }
 
   ngOnInit(): void {
     

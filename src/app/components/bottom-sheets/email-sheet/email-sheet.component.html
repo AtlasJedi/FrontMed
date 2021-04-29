@@ -14,7 +14,7 @@
     <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
         <mat-form-field #namePost color="primary" appearance="outline">
             <mat-label>IMIĘ</mat-label>
-            <input matInput >
+            <input matInput placeholder="name" [formControl]="name">
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="(isHandset$ | async) ? 2 : 1">
@@ -27,7 +27,7 @@
     <mat-grid-tile [colspan]="2" [rowspan]="3">
         <mat-form-field appearance="outline">
             <mat-label>Twoja wiadomość. Max 1000 znaków.</mat-label>
-            <textarea matInput style="height: 12rem;"></textarea>
+            <textarea matInput placeholder="text" [formControl]="text" style="height: 12rem;"></textarea>
           </mat-form-field>
     </mat-grid-tile>
 

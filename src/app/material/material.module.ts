@@ -52,7 +52,12 @@ const expo = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot({
+      timeOut: 2000,
+      showProgressBar: false,
+      pauseOnHover: true,
+      clickToClose: true
+    })
 ];
 @NgModule({
   declarations: [],

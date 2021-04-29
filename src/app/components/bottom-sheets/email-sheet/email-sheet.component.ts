@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { map, shareReplay, timeout } from 'rxjs/operators';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { MessageHero } from 'src/app/interfaces/userMessage';
 import { MessagesService } from 'src/app/services/messages/messages.service';
-import {NotificationsService} from 'angular2-notifications'
-import { NotifiService } from 'src/app/services/notifications/notifi.service';
+import {NotificationsService} from 'angular2-notifications';
 
 
 @Component({
@@ -30,18 +29,21 @@ export class EmailSheetComponent implements OnInit {
 
     if (this.email.valid && this.name.valid && this.text.valid){
       this.messageHero = {
+        id :0,
         name: this.name.value,
         text: this.text.value,
         email: this.email.value,
-        status: 'created'
+        status: 'CREATED'
       }
       this.messageService.newMessage(this.messageHero).subscribe(
-        data => this.notify.sendAlert(data.name),
-        error => this.notify.sendAlert(error)
+        data => this.notificationService.success("Dziękujemy "+data.name+" za przesłanie wiadomości."),
+        error => this.notificationService.warn("yo"+error)
       );
       
       this._bottomSheetRef.dismiss();
-      this.notificationService.success(this.notify.currentAlert.subscribe());
+      
+    } else {
+      window.alert("Nieprawidłowe dane")
     }
 
   }
@@ -63,8 +65,7 @@ export class EmailSheetComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver,
               private _bottomSheetRef: MatBottomSheetRef<EmailSheetComponent>,
               private messageService: MessagesService,
-              private notificationService: NotificationsService,
-              private notify: NotifiService) { }
+              private notificationService: NotificationsService) { }
 
   ngOnInit(): void {
   }
