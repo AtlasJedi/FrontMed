@@ -14,6 +14,7 @@ import { HandiSheetComponent } from './components/bottom-sheets/handi-sheet/hand
 import { EmailSheetComponent } from './components/bottom-sheets/email-sheet/email-sheet.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AdminComponent } from './components/admin/admin/admin.component';
 registerLocaleData(localePl);
 
 @NgModule({
@@ -29,7 +30,8 @@ registerLocaleData(localePl);
     HandiSheetComponent,
     EmailSheetComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    AdminComponent
   ],
   imports: [
     MaterialModule
