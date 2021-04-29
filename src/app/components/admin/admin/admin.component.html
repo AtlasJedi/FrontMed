@@ -1,0 +1,75 @@
+<div class="welcome">
+    <h1>GOD MODE</h1>
+</div>
+
+<div class="container">
+
+
+<mat-grid-list cols="4" rowHeight="4rem">
+    <mat-grid-tile class="options" [colspan]="1" [rowspan]="1">
+        <div class="item"><h2>NOWA AKTUALIZACJA: </h2></div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="item"><h2>OPCJE</h2></div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button class="item" mat-raised-button (click)="increseP()">DODAJ PARARAF </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button class="item" mat-raised-button (click)="post()">POST </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>TYTUŁ</mat-label>
+            <input matInput #title (keydown)="getData(title.value, 100)">
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let p of newsCandidate.content; let id = index;" [colspan]="4" [rowspan]="1">
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>PARAGRAF: {{id+1}}</mat-label>
+            <input matInput #paragraf (keydown)="getData(paragraf.value, this.id)">
+        </mat-form-field>
+    </mat-grid-tile>
+   
+    </mat-grid-list>
+
+    <mat-divider></mat-divider>
+
+    <!-- NEW MODEL  -->
+    <div class="news-model-container">
+        
+    <mat-expansion-panel>
+    <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+            
+        <mat-panel-title class="title-container">
+            <div class="title-icon">
+                <mat-icon [inline]="true" color="primary">{{newsCandidate.category}}</mat-icon>
+            </div>
+            <div class="mat-title">
+                {{newsCandidate.title}} 
+            </div>
+            
+        </mat-panel-title>
+
+        <div class="date-container">{{newsCandidate.date | date:'dd MMMM'}}</div>
+        
+    </mat-expansion-panel-header>
+
+    <div *ngFor="let c of newsCandidate.content">
+        <div class="mat-body-1">
+            {{c}}
+        </div>
+    </div>
+    
+
+    <mat-action-row>
+        <button mat-button color="primary">KOLEJNA AKTUALNOŚĆ</button>
+      </mat-action-row>
+</mat-expansion-panel>
+</div>
+
+<mat-divider></mat-divider>
+
+
+</div>
